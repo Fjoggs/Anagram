@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by fjogen on 2/7/14.
+ * Project: ${PROJECT_NAME}
+ * Package: ${PACKAGE_NAME}
+ *
+ * Author: Vegard Fjogstad
+ * Time and date: 1:10 PM, 2/7/14
  */
 public class AnagramSolver {
     /**
@@ -28,7 +32,7 @@ public class AnagramSolver {
     }
 
     /**
-     * This method is public, to allow UnitTesting.
+     *
      * @param inputFile
      * @return An ArrayList containing all the words found in the input file.
      * @throws IOException

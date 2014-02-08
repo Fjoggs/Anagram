@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by fjogen on 2/7/14.
+ * Project: ${PROJECT_NAME}
+ * Package: ${PACKAGE_NAME}
+ *
+ * Author: Vegard Fjogstad
+ * Time and date: 1:10 PM, 2/7/14
  */
 public class AnagramSolverTest {
     private AnagramSolver anagramSolver;

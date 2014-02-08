@@ -3,7 +3,11 @@ package no.finn.task.Delievery;
 import java.util.*;
 
 /**
- * Created by fjogen on 2/7/14.
+ * Project: ${PROJECT_NAME}
+ * Package: ${PACKAGE_NAME}
+ *
+ * Author: Vegard Fjogstad
+ * Time and date: 1:09 PM, 2/7/14
  */
 public class AnagramChecker {
     private HashMap<String, Set<String>> hashMap;
