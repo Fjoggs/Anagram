@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Author: Vegard Fjogstad
  * Time and date: 1:10 PM, 2/7/14
  */
-public class AnagramSolver {
+public class Anagram {
     /**
      * Method takes a string as the first argument, which point to the
      * file containing the words to be checked.
@@ -35,8 +35,9 @@ public class AnagramSolver {
     }
 
     /**
-     *
-     * @param inputFile
+     * Reads a file and places each word found in an array.
+     * All words are reduced to lower case.
+     * @param inputFile File containing words
      * @return An ArrayList containing all the words found in the input file.
      * @throws IOException
      */
