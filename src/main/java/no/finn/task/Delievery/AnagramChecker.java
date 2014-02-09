@@ -10,7 +10,7 @@ import java.util.*;
  * Time and date: 1:09 PM, 2/7/14
  */
 public class AnagramChecker {
-    public HashMap<String, Set<String>> hashMap;
+    private HashMap<String, Set<String>> hashMap;
     private ArrayList<String> wordArray;
 
     /**
@@ -23,17 +23,9 @@ public class AnagramChecker {
     }
 
     /**
-     * Method to initiate the hashing method. Simply used for naming conventions so it's easier
-     * to see what each method does.
-     */
-    public void performAnagramCheck() {
-        hashWord();
-    }
-
-    /**
      *
      */
-    public void hashWord() {
+    public void performAnagramCheck() {
         Set<String> stringSet;
         for(String unsortedWord : wordArray) {
             String sortedWord = sortWord(unsortedWord);

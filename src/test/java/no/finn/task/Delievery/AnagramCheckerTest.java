@@ -26,17 +26,25 @@ public class AnagramCheckerTest {
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add("banana");
         arrayList.add("ananab");
+        arrayList.add("Apple");
         anagramChecker = new AnagramChecker(arrayList);
 
     }
 
     @Test
-    public void testHashWord() throws Exception {
-        anagramChecker.hashWord();
+    public void testPerformAnagramCheck() throws Exception {
+        anagramChecker.performAnagramCheck();
         HashMap<String, Set<String>> hashMap = anagramChecker.getHashMap();
         Set<String> result = hashMap.get("aaabnn");
         assertTrue(result.contains("banana"));
         assertTrue(result.contains("ananab"));
+    }
+
+    @Test
+    public void testPerformAnagramCheck_hasTwoKeys() throws Exception {
+        anagramChecker.performAnagramCheck();
+        HashMap<String, Set<String>> hashMap = anagramChecker.getHashMap();
+        assertEquals(2, hashMap.size());
     }
 
     @Test
