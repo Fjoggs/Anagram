@@ -10,9 +10,8 @@ import java.util.*;
  * Time and date: 1:09 PM, 2/7/14
  */
 public class AnagramChecker {
-    private HashMap<String, Set<String>> hashMap;
+    public HashMap<String, Set<String>> hashMap;
     private ArrayList<String> wordArray;
-    private Set<String> stringSet;
 
     /**
      *
@@ -24,18 +23,18 @@ public class AnagramChecker {
     }
 
     /**
-     * This constructor is only used for jUnit testing.
+     * Method to initiate the hashing method. Simply used for naming conventions so it's easier
+     * to see what each method does.
      */
-    public AnagramChecker() {
-        hashMap = new HashMap<String, Set<String>>();
-        wordArray = new ArrayList<String>();
-    }
-
     public void performAnagramCheck() {
         hashWord();
     }
 
+    /**
+     *
+     */
     public void hashWord() {
+        Set<String> stringSet;
         for(String unsortedWord : wordArray) {
             String sortedWord = sortWord(unsortedWord);
             stringSet = hashMap.get(sortedWord);
@@ -77,5 +76,13 @@ public class AnagramChecker {
                 System.out.println(value.toString());
             }
         }
+    }
+
+    /**
+     * Used for jUnit testing.
+     * @return the HashMap in this state.
+     */
+    public HashMap<String, Set<String>> getHashMap() {
+        return hashMap;
     }
  }

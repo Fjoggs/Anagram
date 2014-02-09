@@ -3,7 +3,13 @@ package no.finn.task.Delievery;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Project: ${PROJECT_NAME}
@@ -17,8 +23,20 @@ public class AnagramCheckerTest {
 
     @Before
     public void setUp() {
-        anagramChecker = new AnagramChecker();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add("banana");
+        arrayList.add("ananab");
+        anagramChecker = new AnagramChecker(arrayList);
 
+    }
+
+    @Test
+    public void testHashWord() throws Exception {
+        anagramChecker.hashWord();
+        HashMap<String, Set<String>> hashMap = anagramChecker.getHashMap();
+        Set<String> result = hashMap.get("aaabnn");
+        assertTrue(result.contains("banana"));
+        assertTrue(result.contains("ananab"));
     }
 
     @Test

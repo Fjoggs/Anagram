@@ -23,7 +23,7 @@ public class Anagram {
      *             containing words to be tested.
      */
     public static void main(String[] args) {
-        ArrayList<String> wordArray = new ArrayList<String>();
+        ArrayList<String> wordArray;
         try {
             wordArray = readInput(new File(args[0]));
             AnagramChecker anagramChecker = new AnagramChecker(wordArray);
@@ -48,7 +48,7 @@ public class Anagram {
         String readLine;
         while((readLine = bufferedReader.readLine())!=null) {
             String lowerCaseLine = readLine.toLowerCase();
-            System.out.printf("Current line read is: %s \n", lowerCaseLine);
+            //System.out.printf("Current line read is: %s \n", lowerCaseLine);
             wordArray.add(lowerCaseLine);
         }
         fileReader.close();
