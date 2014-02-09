@@ -44,9 +44,9 @@ public class AnagramSolver {
         ArrayList<String> wordArray = new ArrayList<String>();
         FileReader fileReader = new FileReader(inputFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line;
-        while((line = bufferedReader.readLine())!=null) {
-            String lowerCaseLine = line.toLowerCase();
+        String readLine;
+        while((readLine = bufferedReader.readLine())!=null) {
+            String lowerCaseLine = readLine.toLowerCase();
             System.out.printf("Current line read is: %s \n", lowerCaseLine);
             wordArray.add(lowerCaseLine);
         }
