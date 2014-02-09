@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -25,16 +26,19 @@ public class AnagramTest {
 
     @Test
     public void testReadInput() throws Exception {
-        ArrayList<String> output = new ArrayList<String>();
-        output = anagram.readInput(new File("junitTest.txt"));
-        /*
-        File structure:
-        Banana
-        Orange
-        Apple
-         */
-        assertEquals("banana", output.get(0));
-        assertEquals("orange", output.get(1));
-        assertEquals("apple", output.get(2));
+        try {
+            ArrayList<String> output = anagram.readInput(new File("junitTest.txt"));
+            /*
+            File structure:
+            Banana
+            Orange
+            Apple
+             */
+            assertEquals("banana", output.get(0));
+            assertEquals("orange", output.get(1));
+            assertEquals("apple", output.get(2));
+        } catch(IOException e) {
+            System.out.println("File not found. Aborting test.");
+        }
     }
 }
