@@ -15,20 +15,23 @@ import java.util.ArrayList;
  */
 public class AnagramSolver {
     /**
-     * Method takes an inputfile as the first argument.
-     * @param args
+     * Method takes a string as the first argument, which point to the
+     * file containing the words to be checked.
+     * Included in the project is the file "string-array.txt" which contains
+     * the words provided with the task.
+     * @param args First and only argument needed is a string pointing to a file
+     *             containing words to be tested.
      */
     public static void main(String[] args) {
         ArrayList<String> wordArray = new ArrayList<String>();
-        AnagramSolver anagramSolver = new AnagramSolver();
         try {
-            wordArray = anagramSolver.readInput(new File(args[0]));
+            wordArray = readInput(new File(args[0]));
+            AnagramChecker anagramChecker = new AnagramChecker(wordArray);
+            anagramChecker.performAnagramCheck();
+            anagramChecker.prettyPrint();
         } catch (IOException e) {
-            System.out.println("File not found.");
+            System.out.println("File not found. Exiting program..");
         }
-        AnagramChecker anagramChecker = new AnagramChecker(wordArray);
-        anagramChecker.performAnagramCheck();
-        anagramChecker.prettyPrint();
     }
 
     /**
@@ -37,7 +40,7 @@ public class AnagramSolver {
      * @return An ArrayList containing all the words found in the input file.
      * @throws IOException
      */
-    public ArrayList<String> readInput(File inputFile) throws IOException {
+    public static ArrayList<String> readInput(File inputFile) throws IOException {
         ArrayList<String> wordArray = new ArrayList<String>();
         FileReader fileReader = new FileReader(inputFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
